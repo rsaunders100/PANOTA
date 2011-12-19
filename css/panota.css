@@ -1,0 +1,151 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1;
+  color: black;
+  background: white;
+}
+ol, ul {
+  list-style: none;
+}
+a img {
+  border: none;
+}
+
+html {
+  background: #eeeeee;
+}
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4em;
+    background: #eeeeee;
+    color: #333333;
+  }
+
+#panota-app {
+  width: 471px;
+  margin: 0 auto 40px;
+  background: white;
+  padding: 20px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 5px 6px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 5px 6px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 5px 6px 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 5px 6px 0;
+}
+  #panota-app h1 {
+    font-size: 45px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px 0 7px 0;
+    line-height: 1;
+  }
+  #panota-app h2 {
+    font-size: 17px;
+		font-style:italic;
+    text-align: center;
+    padding: 0 0 40px 0;
+    line-height: 1;
+  }
+
+#app-content {
+  position: relative;
+}
+  #app-content input[type=text] {
+    width: 457px;
+    font-size: 24px;
+    font-family: inherit;
+    line-height: 1.4em;
+    border: 0;
+    outline: none;
+    padding: 6px;
+    border: 1px solid #999999;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+    -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+  }
+
+.section {
+	padding: 10px 0 10px 0;
+}
+
+	.section li {
+		padding: 1px 0 3px 0;
+	}
+
+#instructions {
+	padding: 0 0 40px 0;
+	font-size: 13px;
+  text-align: center;
+	font-style:italic;
+  line-height: 1.15;
+}
+
+.sublist {
+	display:none;
+	padding: 0 0 0 20px;
+}
+
+/* tooltip styling. by default the element to be styled is .tooltip  */
+.tooltip {
+	display:none;
+	background:transparent url(../images/black.png);
+	font-size:12px;
+	height:60px;
+	width:160px;
+	padding:25px;
+	color:#fff;	
+}
+
+.infoimage {
+	float:right;
+}
+
+.result {
+	font-size: 16px;
+  padding: 18px 0 26px 0;
+  line-height: 1;
+}
+
+	.result img {
+		padding: 4px 0 0 0;
+	}
+
+	.result-days {
+		font-size: 22px;
+	  font-weight: bold;
+	}
+
+input[type=checkbox], input[type=radio] {
+	width:21px;
+}
+
+.radio-row, .checkbox-row {
+	padding: 1px 0 1px 0;
+}
+	.radio-row:hover, .checkbox-row:hover { 
+		background: #ff0;
+	}
+
+.section p {
+	font-size: 15px;
+	font-style:italic;
+  padding: 0 0 5px 0;
+}

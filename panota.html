@@ -1,0 +1,473 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+		<meta name="viewport" content="width=500, user-scalable=yes">
+    <title>PANOTA | iOS time estimation</title>
+	<style>
+	    a.test { font-weight: bold; }
+	</style>
+	<link href="css/panota.css" media="all" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="js/jquery.tools.min.js"></script>
+	<script type="text/javascript" src="js/panota.js"></script>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-27812010-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>          
+  </head>
+  <body>
+
+	<div id="panota-app">
+		<div id="title">
+			<h1>PANOTA</h1>
+			<h2><b>P</b>ull <b>A</b> <b>N</b>umber <b>O</b>ut <b>T</b>he <b>A</b>ir: iOS time estimation</h2>
+		</div>
+		
+		<ul id="instructions">
+			<li><b>INSTRUCTIONS</b></li>
+			<li>Use the form below to fill in the details of the iOS App.</li>
+			<li>The completion estimate will update itself automatically.</li>
+			<li>The estimate is displayed at the top and bottom to minimise scrolling.</li>
+			<li>Hover over the info icons for more help.</li>
+		</ul>
+	
+		<div class="result">
+			The app will take approximately <span class="result-days">X</span> man days to complete
+			<img class="infoimage" src="images/info_small.png" 
+							title="Development only. Excludes testing and project management.">
+		</div>
+	
+		<div id="app-content"> 
+		<form>
+			<div class="section">
+				<p>The app will have:</p>
+				<input type="text" name="numViews" value="1" />
+				<p>view(s) <img class="infoimage" src="images/info_small.png" 
+								title="How many views / screens will there be? E.g. Login, Table View, Detail View . . ."></p>
+				 
+			</div>
+
+			<div class="section">
+				<p>It will be for:</p>
+				<ul>
+					<li>
+						<div class="radio-row">
+							<input type="radio" name="platform" value="iphone" checked="checked" />iPhone
+							<img class="infoimage" src="images/info_small.png" 
+											title="Designed for iPhone/iPod sized devices. Will still work on iPad as a '2x app'">
+						</div>
+					</li>
+					<li>
+						<div class="radio-row">
+							<input type="radio" name="platform" value="ipad" />iPad Only
+							<img class="infoimage" src="images/info_small.png" 
+											title="Designed for iPad and will only work on iPad devices">
+						</div>
+					</li>
+					<li>
+						<div class="radio-row">
+							<input type="radio" name="platform" value="universal" />Universal
+							<img class="infoimage" src="images/info_small.png" 
+											title="Will work on all devices, each view will be optimied for the device's screen size">
+						</div>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="section">
+				<p>The minimum iOS version will be:</p>
+				<ul>
+					<li>
+						<div class="radio-row">
+							<input type="radio" name="target" value="fourOrHigher" checked="checked" />4.0 or higher
+							<img class="infoimage" src="images/info_small.png" 
+											title="Around 90% of devices are on 4.0 or higher">
+						</div>
+					</li>
+					<li>
+						<div class="radio-row">
+							<input type="radio" name="target" value="lowerThanFour" />Lower than 4.0
+							<img class="infoimage" src="images/info_small.png" 
+											title="Targeting on < 4.0 requires more work since some functions are unavailable">
+						</div>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="section">
+				<p>The app should support:</p>
+				<ul>
+					<li>
+						<div class="radio-row">
+							<input type="radio" name="orientation" value="one" checked="checked" />One orientation only
+							<img class="infoimage" src="images/info_small.png" 
+											title="The app will only support either landscape or portrait mode">
+						</div>
+					</li>
+					<li>
+						<div class="radio-row">
+							<input type="radio" name="orientation" value="mix" />Mutiple orientations in some places
+							<img class="infoimage" src="images/info_small.png" 
+											title="e.g. Pictures or Videos can be viewed in landscape, the rest, portaint only">
+						</div>
+					</li>
+					<li>
+						<div class="radio-row">
+							<input type="radio" name="orientation" value="all" />Mutiple orientations throughout 
+							<img class="infoimage" src="images/info_small.png" 
+											title="Apple's design guidelines state iPad apps should support all orientations">
+						</div>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="section">
+				<p>The app will use:</p>
+				<ul>
+					<li>
+						<div class="radio-row">
+							<input type="radio" name="feeds" value="none" checked="checked" />No external feeds
+							<img class="infoimage" src="images/info_small.png" 
+											title="The app will not need to request data from external sources">
+						</div>
+					</li>
+					<li>
+						<div class="radio-row">
+							<input type="radio" name="feeds" value="thirdParty" />3rd party feeds
+							<img class="infoimage" src="images/info_small.png" 
+											title="E.g. Google's route API. Established feeds from well know sources">
+						</div>
+					</li>
+					<li>
+						<div class="radio-row">
+							<input type="radio" name="feeds" value="inHouseFeeds" />Bespoke or In house feeds
+							<img class="infoimage" src="images/info_small.png" 
+											title="Will use feeds made specifically for the app">
+						</div>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="section">
+				<p>It will also include:</p> 
+				<ul>
+					<li>
+						<div class="checkbox-row">
+							<input type="checkbox" id="test" name="adverts" value="yes" />Adverts
+							<img class="infoimage" src="images/info_small.png" 
+											title="The app will generate revenue from advertisements or sponsorship">
+						</div>
+						<ul class="sublist">
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="advert-type" value="iad" />iAds
+									<img class="infoimage" src="images/info_small.png" 
+													title="Apple's standard banner adverts">
+								</div>
+							</li>
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="advert-type" value="other-banner" />Other static ads
+									<img class="infoimage" src="images/info_small.png" 
+													title="In-house or sponsorship or 3rd party banner (AdMob, 4thScreen, InMobi etc)">
+								</div>
+							</li>
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="advert-type" value="interstitial" />Interstitial ads
+									<img class="infoimage" src="images/info_small.png" 
+													title="Full screen adverts displayed on startup or after an event">
+								</div>
+							</li>
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="advert-type" value="video" />Video
+									<img class="infoimage" src="images/info_small.png" 
+													title="A video advert displayed on startup or after and event">
+								</div>
+							</li>
+						</ul>
+					</li>
+					
+					<li>
+						<div class="checkbox-row">
+							<input type="checkbox" name="notifications" value="yes" />Notifications
+							<img class="infoimage" src="images/info_small.png" 
+											title="The app will recive local or push Notifications (a red badge will appear)">
+						</div>
+						<ul class="sublist">
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="notification-type" value="local" />Local
+									<img class="infoimage" src="images/info_small.png" 
+													title="Notifications are sceduled for some point in the future (no server is required)">
+								</div>
+							</li>
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="notification-type" value="push" />Push
+									<img class="infoimage" src="images/info_small.png" 
+													title="Notifications are sent by a server to the app, usualy when some event occurs">
+								</div>
+							</li>
+						</ul>
+					</li>
+					
+					<li>
+						<div class="checkbox-row">
+							<input type="checkbox" name="mapView" value="yes" />A map view	
+							<img class="infoimage" src="images/info_small.png" 
+											title="Displays a map an overlay">
+						</div>
+						<ul class="sublist">
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="mapView-type" value="simple" />Simple
+									<img class="infoimage" src="images/info_small.png" 
+														title="Built in map with standard pin annotations.">
+								</div>
+							</li>
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="mapView-type" value="complex" />Complex
+									<img class="infoimage" src="images/info_small.png" 
+													title="Built in map with complex or custom overlays / annotations.">
+								</div>
+							</li>
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="mapView-type" value="offline" />Offline
+									<img class="infoimage" src="images/info_small.png" 
+												title="The map data will be stored in the app so will work without an internet connection">
+								</div>
+							</li>
+						</ul>
+					</li>
+					
+					<li>
+						<div class="checkbox-row">
+							<input type="checkbox" name="custon-ui" value="yes" />Custom uesr interface
+							<img class="infoimage" src="images/info_small.png" 
+											title="Custom buttons, tab bars, navigation bars, backgrounds, tables, lists . . .">
+						</div>
+						<ul class="sublist">
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="custon-ui-type" value="simple" />A few custon UI elements
+									<img class="infoimage" src="images/info_small.png" 
+													title="1-4 simple custom UI elements used consistently throughout the app">
+								</div>
+							</li>
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="custon-ui-type" value="complex" />Many custom UI elements
+									<img class="infoimage" src="images/info_small.png" 
+													title="Many custom UI elements or some complex element(s)">
+								</div>
+							</li>
+						</ul>
+					</li>
+					
+					<li>
+						<div class="checkbox-row">
+							<input type="checkbox" name="caching" value="yes" />Data caching
+							<img class="infoimage" src="images/info_small.png" 
+											title="Will save downloaded images or data locally, for faster future retrival">
+						</div>
+						<ul class="sublist">
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="caching-type" value="simple" />A little caching needed
+									<img class="infoimage" src="images/info_small.png" 
+													title="Images or one feed needs to be cached">
+								</div>
+							</li>
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="caching-type" value="complex" />Much caching needed
+									<img class="infoimage" src="images/info_small.png" 
+													title="Several feeds and images need to be cached">
+								</div>
+							</li>
+						</ul>
+					</li>
+					
+					<li>
+						<div class="checkbox-row">
+							<input type="checkbox" name="facebook" value="yes" />Facebook integration
+							<img class="infoimage" src="images/info_small.png" 
+											title="Interacts with Facebook to some degree">
+						</div>
+						<ul class="sublist">
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="facebook-type" value="post" />Posting to Facebook
+									<img class="infoimage" src="images/info_small.png" 
+													title="Sharing links and or text on Facebook">
+								</div>
+							</li>
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="facebook-type" value="get" />Getting data from Facebook
+									<img class="infoimage" src="images/info_small.png" 
+													title="Retrieving info e.g. Recent posts in a page, list of friends etc">
+								</div>
+							</li>
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="facebook-type" value="complex" />Both
+									<img class="infoimage" src="images/info_small.png" 
+													title="Posting to and retrieving data from Facebook">
+								</div>
+							</li>
+						</ul>
+					</li>
+					
+					<li>
+						<div class="checkbox-row">
+							<input type="checkbox" name="twitter" value="yes" />Twitter integration
+							<img class="infoimage" src="images/info_small.png" 
+											title="Interacts with Twitter to some degree">
+						</div>
+						<ul class="sublist">
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="twitter-type" value="post" />Posting to Twitter
+									<img class="infoimage" src="images/info_small.png" 
+													title="Sharing links and or text on Twitter">
+								</div>
+							</li>
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="twitter-type" value="get" />Getting data from Twitter
+									<img class="infoimage" src="images/info_small.png" 
+													title="Retrieving recent tweets from a user">
+								</div>
+							</li>
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="twitter-type" value="complex" />Both
+									<img class="infoimage" src="images/info_small.png" 
+													title="Posting to and retrieving data from Twitter">
+								</div>
+							</li>
+						</ul>
+					</li>
+					
+					<li>
+						<div class="checkbox-row">
+							<input type="checkbox" name="email" value="yes" />Email
+							<img class="infoimage" src="images/info_small.png" 
+											title="Sends/shares text, links or attachments via email">
+						</div>
+					</li>
+					
+					<li>
+						<div class="checkbox-row">
+							<input type="checkbox" name="camera" value="yes" />The camera or gallery
+							<img class="infoimage" src="images/info_small.png" 
+											title="Capture images on device or picks from existing photos">
+						</div>
+					</li>
+					
+					<li>
+						<div class="checkbox-row">
+							<input type="checkbox" name="motion" value="yes" />Motion dectection
+							<img class="infoimage" src="images/info_small.png" 
+											title="The accelerometer, e.g. for a spirit level or shake gestures">
+						</div>
+					</li>
+					
+					<li>
+						<div class="checkbox-row">
+							<input type="checkbox" name="animation" value="yes" />Animation
+							<img class="infoimage" src="images/info_small.png" 
+											title="Elements are animated, e.g. Fade, zoom, rotate">
+						</div>
+						<ul class="sublist">
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="animation-type" value="simple" />To some degree
+									<img class="infoimage" src="images/info_small.png" 
+													title="A few simple animations, e.g. fade in, flip over">
+								</div>
+							</li>
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="animation-type" value="complex" />To a large extent
+									<img class="infoimage" src="images/info_small.png" 
+													title="Heavy use of animation or some 3D animation effects">
+								</div>
+							</li>
+						</ul>
+					</li>
+					
+					<li>
+						<div class="checkbox-row">
+							<input type="checkbox" name="video" value="yes" />Video
+							<img class="infoimage" src="images/info_small.png" 
+											title="In-built or downloaded videos(s) are displayed">
+						</div>
+						<ul class="sublist">
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="video-type" value="simple" />The video will come with the App
+									<img class="infoimage" src="images/info_small.png" 
+													title="The video comes with the app and will not need to be downloaded">
+								</div>
+							</li>
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="video-type" value="complex" />The video will downloaded
+									<img class="infoimage" src="images/info_small.png" 
+													title="The video will be downloaded since it is not included in the app's bundle">
+								</div>
+							</li>
+						</ul>
+					</li>
+					
+					<li>
+						<div class="checkbox-row">
+							<input type="checkbox" name="audio" value="yes" />Audio
+							<img class="infoimage" src="images/info_small.png" 
+											title="e.g. Sound fx or background music. Excludes video-audio">
+						</div>
+						<ul class="sublist">
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="audio-type" value="simple" />The audio will come with the App
+									<img class="infoimage" src="images/info_small.png" 
+													title="The audio comes with the app and will not need to be downloaded">
+								</div>
+							</li>
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="audio-type" value="complex" />The audio will be downloaded
+									<img class="infoimage" src="images/info_small.png" 
+													title="The audio will be downloaded since it is not included in the app's bundle">
+								</div>
+							</li>
+						</ul>
+					</li>
+					
+				</ul>
+			</div>
+		</form>	
+		</div>
+		
+		<div class="result">
+			The app will take approximately <span class="result-days">X</span> man days to complete
+			<img class="infoimage" src="images/info_small.png" 
+							title="Development only. Excludes testing and project management.">
+		</div>
+		
+	</div>
+  </body>
+</html>
