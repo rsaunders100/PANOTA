@@ -1,9 +1,7 @@
-PANOTA - Pull a number out of the Air
+[PANOTA](http://dl.dropbox.com/u/18600785/PANOTA/panota.html) - Pull a number out of the Air
 ===============
 
 Self service devlopment-time-estimation for iOS Apps
-
-[**Link**](http://dl.dropbox.com/u/18600785/PANOTA/panota.html)
 
 **TODO**
 
