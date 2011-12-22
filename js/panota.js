@@ -184,6 +184,26 @@ $(function(){
 			default: break;
 		}
 		
+		switch (model['inapp-purchases-type']) {
+			case('simple'):
+				days += 1.0;
+				break;
+			case('complex'):
+				days += 2.1;
+				break;
+			default: break;
+		}
+		
+		switch (model['local-storage-type']) {
+			case('simple'):
+				days += 0.7;
+				break;
+			case('complex'):
+				days += 2.5;
+				break;
+			default: break;
+		}
+		
 		switch (model['notification-type']) {
 			case('local'):
 				days += 0.6;
@@ -213,7 +233,7 @@ $(function(){
 				break;
 			case('complex'):
 				days += 0.7;
-				viewsScaleFactor += 0.1;
+				viewsScaleFactor += 0.22;
 				break;
 			default: break;
 		}
@@ -266,12 +286,17 @@ $(function(){
 			days += 0.6;
 		}
 		
+		if (model.icloud == 'yes') {
+			days += 1.4;
+		}
+		
 		switch (model['animation-type']) {
 			case('simple'):
 				days += 0.2;
 				break;
 			case('complex'):
 				days += 0.7;
+				viewsScaleFactor += 0.12;
 				break;
 			default: break;
 		}

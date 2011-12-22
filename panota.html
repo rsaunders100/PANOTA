@@ -198,6 +198,54 @@
 					
 					<li>
 						<div class="checkbox-row">
+							<input type="checkbox" id="test" name="inapp-purchases" value="yes" />In-app purchases
+							<img class="infoimage" src="images/info_small.png" 
+											title="Users can make purchases in the app using thier iTunes account">
+						</div>
+						<ul class="sublist">
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="inapp-purchases-type" value="simple" />Simple
+									<img class="infoimage" src="images/info_small.png" 
+													title="1 or 2 purchases, usually to upgrade the app">
+								</div>
+							</li>
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="inapp-purchases-type" value="complex" />Complex
+									<img class="infoimage" src="images/info_small.png" 
+													title="2 or more purchases. Might need to coordinate with anouther server.">
+								</div>
+							</li>
+						</ul>
+					</li>
+					
+					<li>
+						<div class="checkbox-row">
+							<input type="checkbox" id="test" name="local-storage" value="yes" />Local data storage
+							<img class="infoimage" src="images/info_small.png" 
+											title="Needs to store a large amount of data on device, e.g. GPS coordinates, names of places">
+						</div>
+						<ul class="sublist">
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="local-storage-type" value="simple" />Simple
+									<img class="infoimage" src="images/info_small.png" 
+													title="< 100 items, very little structure.  Can be stored in a flat file">
+								</div>
+							</li>
+							<li>
+								<div class="radio-row">
+									<input type="radio" name="local-storage-type" value="complex" />Complex
+									<img class="infoimage" src="images/info_small.png" 
+													title="Many items or many relationships between items.  Needs a database.">
+								</div>
+							</li>
+						</ul>
+					</li>
+					
+					<li>
+						<div class="checkbox-row">
 							<input type="checkbox" name="notifications" value="yes" />Notifications
 							<img class="infoimage" src="images/info_small.png" 
 											title="The app will recive local or push Notifications (a red badge will appear)">
@@ -379,9 +427,17 @@
 					
 					<li>
 						<div class="checkbox-row">
-							<input type="checkbox" name="motion" value="yes" />Motion dectection
+							<input type="checkbox" name="motion" value="yes" />Motion detection
 							<img class="infoimage" src="images/info_small.png" 
 											title="The accelerometer, e.g. for a spirit level or shake gestures">
+						</div>
+					</li>
+					
+					<li>
+						<div class="checkbox-row">
+							<input type="checkbox" name="icloud" value="yes" />iCloud
+							<img class="infoimage" src="images/info_small.png" 
+											title="Data needs to be synced between devices, e.g. created documents, saved favourites">
 						</div>
 					</li>
 					
