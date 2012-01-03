@@ -321,6 +321,18 @@ $(function(){
 			default: break;
 		}
 		
+		switch (model['languages-type']) {
+			case('simple'):
+				days += 1.2;
+				viewsScaleFactor += 0.12; 
+				break;
+			case('complex'):
+				days += 1.6;
+				viewsScaleFactor += 0.35; 
+				break;
+			default: break;
+		}
+		
 		// Lastly account for the number of views
 		// The number of views should be a positive number 
 		// if not we revert to the value 1 and update the view accordingly
